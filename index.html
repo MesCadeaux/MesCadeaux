@@ -176,99 +176,140 @@
       </header>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const menuToggle = document.getElementById("menu-toggle");
-        const closeToggle = document.getElementById("close-toggle");
-        const nav = document.getElementById("main-nav");
+    <div class="max-w-7xl mx-auto my-8 text-primary-500">
+      <div class="mb-12">
+        <h2 class="font-semibold tracking-tighter text-xl">Who We Are</h2>
 
-        menuToggle.addEventListener("click", function () {
-          nav.classList.remove("hidden");
-          menuToggle.classList.add("hidden");
-          closeToggle.classList.remove("hidden");
-        });
+        <p class="my-4">
+          <a
+            class="underline transition-colors hover:text-secondary-500"
+            href="https://mescadeaux.com"
+            >MesCadeaux.com</a
+          >
+          is fully developed and published by
+          <a
+            class="underline transition-colors hover:text-secondary-500"
+            href="https://www.lvlup.fr/"
+            >LVLUP</a
+          >, a high-end development agency that loves Laravel.
+        </p>
+      </div>
 
-        closeToggle.addEventListener("click", function () {
-          nav.classList.add("hidden");
-          closeToggle.classList.add("hidden");
-          menuToggle.classList.remove("hidden");
-        });
-      });
-    </script>
+      <div class="mb-12">
+        <h2 class="font-semibold tracking-tighter text-xl">Hosting</h2>
 
-    {{ $slot }}
+        <p class="my-4">
+          We host the site ourselves on a dedicated server running
+          <a
+            class="underline transition-colors hover:text-secondary-500"
+            href="https://www.debian.org/"
+            >Debian</a
+          >
+          12 (aka "Bookworm"), which uses
+          <a
+            class="underline transition-colors hover:text-secondary-500"
+            href="https://www.nginx.com/"
+            >nginx</a
+          >
+          and
+          <a
+            class="underline transition-colors hover:text-secondary-500"
+            href="https://www.php.net/"
+            >php-fpm</a
+          >
+          v8.2.
+        </p>
+      </div>
+
+      <div class="mb-12">
+        <h2 class="font-semibold tracking-tighter text-xl">Our Stack</h2>
+        <p class="my-4">
+          We use
+          <a
+            class="underline transition-colors hover:text-secondary-500"
+            href="https://laravel.com/"
+            >Laravel</a
+          >
+          as our main framework, and we love
+          <a
+            class="underline transition-colors hover:text-secondary-500"
+            href="https://tailwindcss.com/"
+            >TailwindCSS</a
+          >
+          for the frontend. We also use Laravel Nova for the backend. As of
+          today, we use Laravel 10, TailwindCSS 3, and Laravel Nova 4.
+        </p>
+
+        <p class="my-4">
+          Our database is powered by
+          <a
+            class="underline transition-colors hover:text-secondary-500"
+            href="https://mariadb.org/"
+            >MariaDB</a
+          >, an open-source fork of MySQL, which leverages a
+          <a
+            class="underline transition-colors hover:text-secondary-500"
+            href="https://redis.io/"
+            >Redis</a
+          >
+          cache to dynamically generate the site's pages on the fly.
+        </p>
+
+        <p class="my-4">
+          The Search feature is powered by
+          <a
+            class="underline transition-colors hover:text-secondary-500"
+            href="https://www.meilisearch.com/"
+            >Meilisearch</a
+          >
+          (via Laravel Scout). This technology enables us to index more than
+          30,000 products and 13,000 concerts in real time, and to conduct
+          full-text fuzzy searches in the database, yielding response times of
+          less than 200ms.
+        </p>
+
+        <p></p>
+      </div>
+    </div>
 
     <div id="reassurance-wrapper">
       <div id="reassurance">
         <div class="reassurance-item">
-          <img src="/images/reassurance/cocorico.png" alt="Site français" />
+          <img
+            src="https://mescadeaux.com/images/reassurance/cocorico.png"
+            alt="Site français"
+          />
           <div>
             <div class="item-title">Cocorico !</div>
             <p class="text-primary-500">
-              Mes Cadeaux est un site français, dont l'équipe se situe à
-              Marseille
+              Mes Cadeaux is a French website, with the team based in Marseille
             </p>
           </div>
         </div>
         <div class="reassurance-item">
-          <img src="/images/reassurance/expertise.png" alt="Expertise" />
+          <img
+            src="https://mescadeaux.com/images/reassurance/expertise.png"
+            alt="Expertise"
+          />
           <div>
             <div class="item-title">Expertise</div>
-            <p>Nous ne parlons que de produits que nous connaissons</p>
+            <p>We only talk about products we know</p>
           </div>
         </div>
         <div class="reassurance-item">
           <img
-            src="/images/reassurance/qualifies.png"
+            src="https://mescadeaux.com/images/reassurance/qualifies.png"
             alt="Auteurs qualifiés"
           />
           <div>
-            <div class="item-title">Auteurs qualifiés</div>
+            <div class="item-title">Qualified Authors</div>
             <p class="text-primary-500">
-              Nous sommes déjà quatre, plus une petite fille qui teste les
-              jouets pour enfants !
+              We are already four, plus a little girl who tests the children's
+              toys!
             </p>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="section-blue-wrapper">
-      <section class="px-8 md:px-0 md:flex items-center gap-12">
-        <div class="md:flex items-center gap-12">
-          <img
-            class="w-40"
-            src="{{ url('/images/abonne.png') }}"
-            alt="Abonnez vous à notre newsletter"
-          />
-          <div>
-            <div class="text-xl mb-1 font-bold text-primary-500">
-              Profitez de nos bons plans Cadeaux !
-            </div>
-            <div class="text-primary-300 mb-8 md:mb-0">
-              Pour ne rien manquer de nos idées cadeaux,<br />rejoignez-nous !
-            </div>
-          </div>
-        </div>
-        <div class="justify-self-end">
-          <form
-            method="post"
-            action="{{ route('newsletter.subscribe') }}"
-            class="rounded-full bg-white flex justify-between p-4"
-          >
-            @csrf
-
-            <input
-              name="email-address"
-              type="email"
-              class="w-1/2 md:w-full border-0 focus:ring-0 focus:border-0 mr-8"
-              placeholder="Votre email"
-            />
-
-            <button type="submit" class="btn-highlight">S'abonner</button>
-          </form>
-        </div>
-      </section>
     </div>
 
     <div class="footer-wrapper">
